@@ -22,5 +22,20 @@ pipeline {
                 echo 'End'
             }
         }
+
+        stage('Deploy Prod') {
+            input {
+                message "¿despelgar en prod?"
+                ok "si"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            steps {
+                echo "${PERSON} esta desplegando en PROD"
+            }
+        }
+
+
     }
 }
