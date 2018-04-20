@@ -2,6 +2,7 @@ pipeline {
     agent any
     parameters {
         string(name: 'ENVIRONMENT', defaultValue: 'QA', description:'')
+        string(name: 'PROCESS', defaultValue: 'loadMaster', description:'')
     }
     stages {
         stage('Init') {
